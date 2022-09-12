@@ -3,7 +3,6 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estilos.css';
 
-
 const TableGame = (props) => {
     const { players, cambiar } = props;
     let color1 = '';
@@ -12,7 +11,7 @@ const TableGame = (props) => {
 
 const cambiarAction = (id, option) => {
     axios.put('http://localhost:8011/api/player/'+id+'/update/action/'+option)
-        .then((res) => {cambiar([...players])})
+        .then((res) => cambiar())
         .catch((err) => console.log(err));
 }
 
